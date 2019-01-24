@@ -1,0 +1,19 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+  wpa-ssid "YOUR_SSID"
+  wpa-psk "YOUR_PASSWORD"
+
+# static ip
+auto eth0
+iface eth0 inet static
+  address 10.66.171.1
+  network 10.66.171.10
+  netmask 255.255.255.0
+
+dns-search csail.mit.edu
+dns-nameservers 8.8.8.8 10.66.171.10 127.0.0.1
