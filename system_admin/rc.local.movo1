@@ -1,0 +1,23 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+nmcli nm wifi on
+/sbin/route add default gw 10.66.171.10 wlan0
+ip route  del 10.66.171.0/24 dev eth0
+ip route add 10.66.171.1 via 10.66.171.2 dev eth0
+ip route add 10.66.171.5 via 10.66.171.2 dev eth0
+ip route add 10.66.171.8 via 10.66.171.2 dev eth0
+ip route add 10.66.171.9 via 10.66.171.2 dev eth0
+ip route add 10.66.171.15 via 10.66.171.2 dev eth0
+ip route add 10.66.171.16 via 10.66.171.2 dev eth0
+
+exit 0
