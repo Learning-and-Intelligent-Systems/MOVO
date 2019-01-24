@@ -10,7 +10,7 @@
 # bits.
 #
 # By default this script does nothing.
-nmcli nm wifi on
+#nmcli nm wifi on
 /sbin/route add default gw 10.66.171.10 wlan0
 ip route  del 10.66.171.0/24 dev eth0
 ip route add 10.66.171.1 via 10.66.171.2 dev eth0
